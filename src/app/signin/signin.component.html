@@ -1,0 +1,150 @@
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="Sign In" aria-hidden="true">
+  <section class="login">
+    <div class="container">
+     <div class="banner-content">
+      <button class="close"><span>x</span></button>
+      <h1><i class="fa fa-smile"></i>Wandir</h1>
+      <form method="post" class="form-signin js-signin-form">
+       <h3 class="form-signin-heading">Please sign in</h3>
+       <div class="form-group">
+        <input name="email" type="text" class="form-control" placeholder="Email">
+       </div>
+       <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password">
+       </div>
+       <button class="kafe-btn kafe-btn-mint btn-block" type="submit" name="subm">Sign in</button>
+       <br/>
+       <a class="btn btn-dark" href="#" role="button" onClick="show('register')">Don't have an account yet? Register Here.</a>
+       <a class="btn btn-dark " href="#" role="button" onClick="show('register')">Forgot your password?</a>
+      </form>
+      <form method="post" class="form-signin hide js-register-form">
+         <h3 class="form-signin-heading">Please register</h3>
+         <div class="form-signin__top">
+           <a class="kafe-btn kafe-btn-mint btn-block " href="#">
+           Log in with Facebook
+           </a>
+           <a class="kafe-btn kafe-btn-mint btn-block" href="#">
+             Log in with google
+           </a>
+         </div>
+         <div class="form-signin__separator">
+           <div class="form-signin__separator__line"></div>
+           <span>OR</span>
+           <div class="form-signin__separator__line"></div>
+         </div>
+       
+         
+         <div class="form-group">
+          <input name="email" type="text" class="form-control" placeholder="Email">
+         </div>
+         <div class="form-group">
+          <input name="username" type="text" class="form-control" placeholder="Username">
+         </div>
+         <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Password">
+         </div>
+         <a class="kafe-btn kafe-btn-mint btn-block" href="javascript:void(0)" onClick="show('personal-info')">Sign Up</a>
+         <br/>
+         <a class="btn btn-dark " href="#" role="button" onClick="show('signin')" >Already have an account? Click Here.</a>
+         <a class="btn btn-dark " href="#" role="button">Forgot your password?</a>
+      </form>
+      <form method="post" class="form-signin hide js-personal-info-form">
+        <div class="form-group">
+          <button type="button" class="kafe-btn kafe-btn-mint">
+            <span>FEMALE</span>
+            <input type="radio" class="form-control" name="gender" value="female">
+          </button>
+          <button type="button" class="kafe-btn kafe-btn-mint">
+            <span>MALE</span>
+            <input type="radio" class="form-control" name="gender" value="male">
+          </button>
+        </div>
+        <div class="form-group">
+          <button type="button" class="kafe-btn kafe-btn-mint">
+            <span>less than 20</span>
+            <input type="radio" class="form-control" name="age" value="less than 20">
+          </button>
+          <button type="button" class="kafe-btn kafe-btn-mint">
+            <span>20 to 30</span>
+            <input type="radio" class="form-control" name="age" value="20 to 39">
+          </button>
+          <button type="button" class="kafe-btn kafe-btn-mint">
+            <span>more to 39</span>
+            <input type="radio" class="form-control" name="age" value="more to 39">
+          </button>
+        </div>
+        <div class="form-group">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle btn-sm kafe-btn kafe-btn-mint" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select your country
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+            <input type="text" name="country">
+          </div>
+         </div>
+         <a class="kafe-btn kafe-btn-mint btn-block" onClick="show('preferences')">Next</a>
+      </form>
+      <form method="post" class="form-signin hide js-preferences-form">
+            <div class="row">
+              <div class="section-title-pacifico">
+                <h1>Passions & Interests</h1>
+              </div>     
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="photo-rounded-fluffs">
+                  <a href="#"> 
+                    <img class="img-responsive" src="assets/img/fluffs/1.jpg" alt="Image">
+                    <h2 class="text-center">Moments</h2>
+                  </a> 
+                </div>
+              </div> 
+      
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="photo-rounded-fluffs">
+                  <a href="#">
+                    <img class="img-responsive" src="assets/img/fluffs/2.jpg" alt="Image">
+                    <h2 class="text-center">Comedy</h2>
+                  </a> 
+                </div>
+              </div>
+      
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="photo-rounded-fluffs">
+                  <a href="#"> 
+                    <img class="img-responsive" src="assets/img/fluffs/3.jpg" alt="Image">
+                    <h2 class="text-center">Womanly</h2>
+                  </a> 
+                </div>
+              </div>
+      
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="photo-rounded-fluffs">
+                  <a href="#">
+                    <img class="img-responsive" src="assets/img/fluffs/4.jpg" alt="Image">
+                    <h2 class="text-center">Manly</h2>
+                  </a> 
+                </div>
+              </div>
+            </div>
+    
+        <a class="kafe-btn kafe-btn-mint btn-block" href="home">Complete</a>
+      </form>
+
+     </div>
+    </div>
+  </section> 
+  <script>
+    function show(string){
+      $('.js-register-form, .js-signin-form, .js-personal-info-form, .js-preferences-form').addClass('hide');
+      $('.js-' + string + '-form').removeClass('hide');
+    }
+
+  </script>
+
+
+</div>
