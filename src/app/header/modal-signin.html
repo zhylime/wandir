@@ -2,24 +2,22 @@
   <section class="login">
     <div class="container">
      <div class="banner-content">
-      <button class="close"><span>x</span></button>
+      <button class="close" ng-click="$('#modal').modal('hide');"><span>x</span></button>
       <h1><i class="fa fa-smile"></i>Wandir</h1>
-      <form method="post" class="form-signin js-signin-form" [hidden]="show!==1" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
+      <form method="post" class="form-signin js-signin-form">
        <h3 class="form-signin-heading">Please sign in</h3>
        <div class="form-group">
-        <input name="email" type="text" class="form-control" placeholder="Email" name="email" ngModel required #email="ngModel">
+        <input name="email" type="text" class="form-control" placeholder="Email">
        </div>
        <div class="form-group">
-        <input type="password" class="form-control" name="password" placeholder="Password" ngModel required #password="ngModel">
+        <input type="password" class="form-control" name="password" placeholder="Password">
        </div>
-       <p>email: {{email.value}}</p>
-       <p>password: {{password.value}}</p>
        <button class="kafe-btn kafe-btn-mint btn-block" type="submit" name="subm">Sign in</button>
        <br/>
-       <a class="btn btn-dark" href="#" (click)="show=2">Don't have an account yet? Register Here.</a>
-       <div class="btn btn-dark" href="#" role="button" >Forgot your password?</div>
+       <a class="btn btn-dark" href="#" role="button" ng-click="show('register')">Don't have an account yet? Register Here.</a>
+       <a class="btn btn-dark " href="#" role="button" onClick="show('register')">Forgot your password?</a>
       </form>
-      <form method="post" class="form-signin js-register-form" [hidden]="show!==2">
+      <form method="post" class="form-signin hide js-register-form">
          <h3 class="form-signin-heading">Please register</h3>
          <div class="form-signin__top">
            <a class="kafe-btn kafe-btn-mint btn-block " href="#">
@@ -45,12 +43,12 @@
          <div class="form-group">
           <input type="password" class="form-control" name="password" placeholder="Password">
          </div>
-         <div class="kafe-btn kafe-btn-mint btn-block">Sign Up</div>
+         <a class="kafe-btn kafe-btn-mint btn-block" href="javascript:void(0)" onClick="show('personal-info')">Sign Up</a>
          <br/>
-         <a class="btn btn-dark " href="#" role="button" (click)="show=1">Already have an account? Click Here.</a>
+         <a class="btn btn-dark " href="#" role="button" onClick="show('signin')" >Already have an account? Click Here.</a>
          <a class="btn btn-dark " href="#" role="button">Forgot your password?</a>
       </form>
-      <form method="post" class="form-signin js-personal-info-form" [hidden]="show!==3">
+      <form method="post" class="form-signin hide js-personal-info-form">
         <div class="form-group">
           <button type="button" class="kafe-btn kafe-btn-mint">
             <span>FEMALE</span>
@@ -90,7 +88,7 @@
          </div>
          <a class="kafe-btn kafe-btn-mint btn-block" onClick="show('preferences')">Next</a>
       </form>
-      <form method="post" class="form-signin hide js-preferences-form" [hidden]="show!==4">
+      <form method="post" class="form-signin hide js-preferences-form">
             <div class="row">
               <div class="section-title-pacifico">
                 <h1>Passions & Interests</h1>
@@ -140,13 +138,5 @@
      </div>
     </div>
   </section> 
-  <script>
-    function show(string){
-      $('.js-register-form, .js-signin-form, .js-personal-info-form, .js-preferences-form').addClass('hide');
-      $('.js-' + string + '-form').removeClass('hide');
-    }
-
-  </script>
-
 
 </div>

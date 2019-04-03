@@ -7,18 +7,25 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SigninComponent } from './signin/signin.component';
-
+import { RegisterComponent } from './register/register.component';
+import { PreferenceComponent } from './preference/preference.component';
+import { PersonInfoComponent } from './person-info/person-info.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
     HomepageComponent,
-    SigninComponent
+    SigninComponent,
+    RegisterComponent,
+    PreferenceComponent,
+    PersonInfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
