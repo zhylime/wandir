@@ -15,9 +15,16 @@ export class SigninComponent implements OnInit {
 
   }
 
-  onSubmit(f: NgForm){
+  onSubmitSignIn(f: NgForm){
     console.log(f.value);
     console.log(f.valid);
+  }
+  onSubmitRegister(f: NgForm){
+    console.log(f.value);
+    console.log(f.valid);
+    if(f.valid){
+      this.show = 3;
+    }
   }
 
 }

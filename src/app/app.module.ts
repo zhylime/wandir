@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { PreferenceComponent } from './preference/preference.component';
 import { PersonInfoComponent } from './person-info/person-info.component';
 import { FormsModule } from '@angular/forms';
+import { ListComponent } from './list/list.component';
+import { CreatepostComponent } from './createpost/createpost.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     SigninComponent,
     RegisterComponent,
     PreferenceComponent,
-    PersonInfoComponent
+    PersonInfoComponent,
+    ListComponent,
+    CreatepostComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="Sign In" aria-hidden="true">
   <section class="login">
+    <div class="cover"></div>
     <div class="container">
      <div class="banner-content">
       <button class="close"><span>x</span></button>
       <h1><i class="fa fa-smile"></i>Wandir</h1>
-      <form method="post" class="form-signin js-signin-form" [hidden]="show!==1" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
+      <form method="post" class="form-signin js-signin-form" [hidden]="show!==1" #signinForm="ngForm" (ngSubmit)="onSubmitSignIn(signinForm)" novalidate>
        <h3 class="form-signin-heading">Please sign in</h3>
        <div class="form-group">
         <input name="email" type="text" class="form-control" placeholder="Email" name="email" ngModel required #email="ngModel">
@@ -12,21 +13,18 @@
        <div class="form-group">
         <input type="password" class="form-control" name="password" placeholder="Password" ngModel required #password="ngModel">
        </div>
-       <p>email: {{email.value}}</p>
-       <p>password: {{password.value}}</p>
+       <!-- <p>email: {{email.value}}</p>
+       <p>password: {{password.value}}</p> -->
        <button class="kafe-btn kafe-btn-mint btn-block" type="submit" name="subm">Sign in</button>
        <br/>
        <a class="btn btn-dark" href="#" (click)="show=2">Don't have an account yet? Register Here.</a>
        <div class="btn btn-dark" href="#" role="button" >Forgot your password?</div>
       </form>
-      <form method="post" class="form-signin js-register-form" [hidden]="show!==2">
+      <form method="post" class="form-signin js-register-form" [hidden]="show!==2" #registerForm="ngForm" (ngSubmit)="onSubmitRegister(registerForm)" novalidate="">
          <h3 class="form-signin-heading">Please register</h3>
          <div class="form-signin__top">
            <a class="kafe-btn kafe-btn-mint btn-block " href="#">
            Log in with Facebook
-           </a>
-           <a class="kafe-btn kafe-btn-mint btn-block" href="#">
-             Log in with google
            </a>
          </div>
          <div class="form-signin__separator">
@@ -37,21 +35,22 @@
        
          
          <div class="form-group">
-          <input name="email" type="text" class="form-control" placeholder="Email">
+          <input name="email" type="text" class="form-control" placeholder="Email" ngModel required #email="ngModel">
          </div>
          <div class="form-group">
-          <input name="username" type="text" class="form-control" placeholder="Username">
+          <input name="username" type="text" class="form-control" placeholder="Username" ngModel required #username="ngModel">
          </div>
          <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password" ngModel required #password="ngModel">
          </div>
-         <div class="kafe-btn kafe-btn-mint btn-block">Sign Up</div>
+         <button class="kafe-btn kafe-btn-mint btn-block" type="submit" name="subm">Sign Up</button>
          <br/>
          <a class="btn btn-dark " href="#" role="button" (click)="show=1">Already have an account? Click Here.</a>
          <a class="btn btn-dark " href="#" role="button">Forgot your password?</a>
       </form>
-      <form method="post" class="form-signin js-personal-info-form" [hidden]="show!==3">
+      <form method="post" class="form-signin js-personal-info-form form-signin__personal-info" [hidden]="show!==3">
         <div class="form-group">
+          <p>Your gender:</p>
           <button type="button" class="kafe-btn kafe-btn-mint">
             <span>FEMALE</span>
             <input type="radio" class="form-control" name="gender" value="female">
@@ -62,6 +61,7 @@
           </button>
         </div>
         <div class="form-group">
+          <p>Your age:</p>
           <button type="button" class="kafe-btn kafe-btn-mint">
             <span>less than 20</span>
             <input type="radio" class="form-control" name="age" value="less than 20">
