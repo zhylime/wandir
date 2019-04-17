@@ -1,14 +1,19 @@
 <div class="c-list">
   <div class="c-list__add">
-    <a href="javascript:void(0)">Add</a>
+    <a href="javascript:void(0)" (click)="addNew($index)" class="btn kafe-btn kafe-btn-mint">Add</a>
   </div>
-  <div class="c-list__item">
-    <div class="c-list__date">第一天</div>
-    <div class="c-list__textarea">
-      <textarea name="" id="" rows="1"></textarea>
-    </div>
-    <div class="c-list__edit">
-      <a href="javascript:void(0)">Edit</a>
-    </div>
-  </div>
+  <ul>
+    <li *ngFor="let item of listData; let i = index" [attr.data-index]="i+1" class="c-list__item">
+      <div class="c-list__item__date"><input type="text" value="Day {{i+1}}" [readonly]="readonly"></div>
+      <div class="c-list__item__textarea">
+        <textarea name="" id="" rows="1" placeholder="text goes here" [readonly]="readonly"></textarea>
+        <textarea name="" id="" rows="5" placeholder="highlights" [readonly]="readonly"></textarea>
+      </div>
+      <div class="c-list__item__button">
+        <a href="javascript:void(0)" (click)="toggleBtnLabel()" class="btn kafe-btn kafe-btn-mint">{{btnLabel}}</a>
+        <a href="javascript:void(0)" (click)="removeItem()" class="btn kafe-btn kafe-btn-mint">Remove</a>
+      </div>
+    </li>
+  </ul>
+
 </div>

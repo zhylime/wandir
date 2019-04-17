@@ -1,6 +1,45 @@
 .c-list
+  input
+    width 100%
   textarea
     width 100%
     resize none
+  input
+  textarea
+    line-height 30px
+    padding 2px 5px
+    border none
+  ul
+    padding 0
   a
     color #000
+  &__add
+    a
+      padding 2px 5px
+  &__item
+    &__date
+    &__textarea
+    &__button
+      display inline-block
+      vertical-align top
+      // padding 0 5px
+    &__date
+      width 16%
+      padding-right 2px
+    &__textarea
+      width 50%
+    &__button
+      width 34%
+      a
+        display inline-block
+        padding 4px
+        // width 40%
+        margin 0 2px
+        font-size 12px !important
+        
+        
+    &.edit
+      input
+      textarea
+        border 1px solid black
+        

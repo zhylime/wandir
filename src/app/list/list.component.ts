@@ -6,10 +6,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.styl']
 })
 export class ListComponent implements OnInit {
-
+  public btnLabel = 'edit';
+  public readonly = true;
+  public newItemDom;
+  public listData = [''];
   constructor() { }
 
   ngOnInit() {
+    this.newItemDom = document.querySelector('.c-list__item');
   }
+
+  toggleBtnLabel(e){
+    var target = event.currentTarget;
+    this.btnLabel = this.btnLabel === 'edit' ? 'done' : 'edit';
+    target.parentNode.parentNode.classList.toggle('edit');
+    this.readonly = !this.readonly;
+  }
+
+  addNew($index){
+    this.listData.push({key: $index + 1, value: ''});
+    // var div = this.newItemDom.cloneNode(true);
+    // document.querySelector('.c-list').append(div);
+  }
+
+  removeItem(e){
+    var target = event.currentTarget;
+    target.parentNode.parentNode.remove();
+  }
+
+ 
+
 
 }
