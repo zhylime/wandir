@@ -29,6 +29,9 @@ $(document).ready(function() {
 		return false;
 	});
 	
+	$('.close-modal').click(function(){
+		$('#signInModal').modal('hide');
+	})
 
 
 });

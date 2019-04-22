@@ -1,6 +1,6 @@
 <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="Sign In" aria-hidden="true">
   <section class="login">
-    <div class="cover"></div>
+    <div class="cover close-modal"></div>
     <div class="container">
      <div class="banner-content">
       <button class="close"><span>x</span></button>
@@ -48,7 +48,7 @@
          <a class="btn btn-dark " href="#" role="button" (click)="show=1">Already have an account? Click Here.</a>
          <a class="btn btn-dark " href="#" role="button">Forgot your password?</a>
       </form>
-      <form method="post" class="form-signin js-personal-info-form form-signin__personal-info" [hidden]="show!==3">
+      <form method="post" class="form-signin js-personal-info-form form-signin__personal-info" #personalInfo="ngForm" (ngSubmit)="onSubmitPersonalInfo(personalInfo)" [hidden]="show!==3">
         <div class="form-group">
           <p>Your gender:</p>
           <button type="button" class="kafe-btn kafe-btn-mint">
@@ -76,77 +76,50 @@
           </button>
         </div>
         <div class="form-group">
+          <p>Select your country</p>
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle btn-sm kafe-btn kafe-btn-mint" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <select name="" id="">
+              <option value="">Select your country</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+            </select>
+            <!-- <button class="btn btn-secondary dropdown-toggle btn-sm kafe-btn kafe-btn-mint" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Select your country
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            </button> -->
+            <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-            <input type="text" name="country">
+            </div> -->
+            <!-- <input type="text" name="country"> -->
           </div>
          </div>
-         <a class="kafe-btn kafe-btn-mint btn-block" onClick="show('preferences')">Next</a>
+         <button class="kafe-btn kafe-btn-mint btn-block">Next</button>
       </form>
-      <form method="post" class="form-signin hide js-preferences-form" [hidden]="show!==4">
+      <form method="post" class="form-signin form-signin__preferences js-preferences-form" #preferences="ngForm" (ngSubmit)="onSubmitPreference(preferences)"  [hidden]="show!==4">
             <div class="row">
               <div class="section-title-pacifico">
                 <h1>Passions & Interests</h1>
               </div>     
             </div>
             <div class="row">
-              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div *ngFor = "let item of preferenceData; let i = index;" class="col-md-6 col-sm-6 col-xs-12 nfor">
                 <div class="photo-rounded-fluffs">
-                  <a href="#"> 
-                    <img class="img-responsive" src="assets/img/fluffs/1.jpg" alt="Image">
-                    <h2 class="text-center">Moments</h2>
-                  </a> 
-                </div>
-              </div> 
-      
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="photo-rounded-fluffs">
-                  <a href="#">
-                    <img class="img-responsive" src="assets/img/fluffs/2.jpg" alt="Image">
-                    <h2 class="text-center">Comedy</h2>
+                  <a href="javascript:void(0)" (click)="item.active = !item.active" [className]="item.active ?'active':''">
+                    <img class="img-responsive" src="assets/img/fluffs/{{item.img}}" alt="Image">
+                    <h2 class="text-center">{{item.name}}</h2>
                   </a> 
                 </div>
               </div>
-      
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="photo-rounded-fluffs">
-                  <a href="#"> 
-                    <img class="img-responsive" src="assets/img/fluffs/3.jpg" alt="Image">
-                    <h2 class="text-center">Womanly</h2>
-                  </a> 
-                </div>
-              </div>
-      
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="photo-rounded-fluffs">
-                  <a href="#">
-                    <img class="img-responsive" src="assets/img/fluffs/4.jpg" alt="Image">
-                    <h2 class="text-center">Manly</h2>
-                  </a> 
-                </div>
-              </div>
+
             </div>
     
-        <a class="kafe-btn kafe-btn-mint btn-block" href="home">Complete</a>
+        <button class="kafe-btn kafe-btn-mint btn-block">Complete</button>
       </form>
 
      </div>
     </div>
   </section> 
-  <script>
-    function show(string){
-      $('.js-register-form, .js-signin-form, .js-personal-info-form, .js-preferences-form').addClass('hide');
-      $('.js-' + string + '-form').removeClass('hide');
-    }
-
-  </script>
 
 
 </div>

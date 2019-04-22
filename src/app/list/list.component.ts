@@ -24,7 +24,8 @@ export class ListComponent implements OnInit {
   }
 
   addNew($index){
-    this.listData.push({key: $index + 1, value: ''});
+    console.log($index);
+    // this.listData.push({key: i + 1, value: ''});
     // var div = this.newItemDom.cloneNode(true);
     // document.querySelector('.c-list').append(div);
   }

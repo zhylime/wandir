@@ -8,6 +8,29 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
   public show = 1;
+  public active = false;
+  preferenceData=[
+    {
+      img: '1.jpg',
+      name:'Moments',
+      active: false,
+    },
+    {
+      img: '2.jpg',
+      name:'Comedy',
+      active: false,
+    },
+    {
+      img: '3.jpg',
+      name:'Womanly',
+      active: false,
+    },
+    {
+      img: '4.jpg',
+      name:'Manly',
+      active: false,
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +41,9 @@ export class SigninComponent implements OnInit {
   onSubmitSignIn(f: NgForm){
     console.log(f.value);
     console.log(f.valid);
+    if(f.valid){
+      document.querySelector('.close-modal').click();
+    }
   }
   onSubmitRegister(f: NgForm){
     console.log(f.value);
@@ -26,5 +52,14 @@ export class SigninComponent implements OnInit {
       this.show = 3;
     }
   }
+  onSubmitPersonalInfo(f: NgForm){
+    this.show = 4;
+  }
+  onSubmitPreference(f: NgForm){
+    console.log('close');
+    document.querySelector('.close-modal').click();
+  }
+
+
 
 }
